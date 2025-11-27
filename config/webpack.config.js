@@ -83,9 +83,9 @@ const config = {
         ...(isDevelopment
             ? [new ReactRefreshWebpackPlugin(), new WebpackBar()]// 根据开发环境添加热模块替换插件和构建进度显示插件
             : [new MiniCssExtractPlugin()]),// 生产环境下使用 MiniCssExtractPlugin 插件提取 CSS
-        new BitableAppWebpackPlugin({
-            // open: true, // 控制是否自动打开多维表格
-        }),// 添加多维表格功能插件
+        // new BitableAppWebpackPlugin({
+        //     // open: true, // 控制是否自动打开多维表格
+        // }),// 添加多维表格功能插件
         new HtmlWebpackPlugin({
             filename: 'index.html',// 指定生成的 HTML 文件名
             template: './public/index.html',// 指定 HTML 模板文件
@@ -123,7 +123,7 @@ const config = {
                 if (!devServer || !devServer.app) {
                     throw new Error('webpack-dev-server is not defined');
                 }
-                middlewares.push(opdevMiddleware(devServer));// 添加自定义中间件 opdevMiddleware
+                // middlewares.push(opdevMiddleware(devServer));// 添加自定义中间件 opdevMiddleware
                 return middlewares;
             },
         },// 开发服务器配置
